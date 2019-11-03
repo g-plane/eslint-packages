@@ -19,8 +19,10 @@
   },
   "devDependencies": {
     "@gplane/tsconfig": "^1.0.0",
+    "@types/chai": "^4.2.4",
     "@types/eslint": "^6.1.3",
     "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
     "eslint": "^6.6.0",
     "mocha": "^6.2.2",
     "prettier": "1.18.*",
