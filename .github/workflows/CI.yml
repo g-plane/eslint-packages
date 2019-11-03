@@ -1,0 +1,15 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install packages
+        run: yarn
+      - name: Check code format
+        run: 'yarn fmt:check'
+      - name: Run unit test
+        run: yarn test

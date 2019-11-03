@@ -1,0 +1,8 @@
+{
+  "extends": "@gplane/tsconfig",
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": false,
+    "sourceMap": false
+  }
+}
