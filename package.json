@@ -11,8 +11,8 @@
     "dist"
   ],
   "scripts": {
-    "fmt": "prettier --write **/*.ts",
-    "fmt:check": "prettier -c **/*.ts",
+    "fmt": "prettier --write {src,tests}/**/*.ts",
+    "fmt:check": "prettier -c {src,tests}/**/*.ts",
     "test": "mocha --reporter=dot",
     "build": "tsc -p tsconfig.build.json",
     "prepublishOnly": "yarn build"

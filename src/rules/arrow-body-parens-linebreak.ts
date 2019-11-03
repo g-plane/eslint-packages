@@ -8,7 +8,8 @@ export default {
     type: 'layout',
     fixable: 'whitespace',
     docs: {
-      description: 'Enforce style of linebreaks before/after parens of arrow functions bodies.'
+      description:
+        'Enforce style of linebreaks before/after parens of arrow functions bodies.',
     },
     schema: [
       {
@@ -56,7 +57,7 @@ export default {
               messageId: 'missingAfter',
               loc: {
                 start: start.loc.start,
-                end: first.loc.end,
+                end: first.loc.start,
               },
               fix: fixer => fixer.insertTextAfter(start, '\n'),
             })
@@ -66,7 +67,7 @@ export default {
             context.report({
               messageId: 'missingBefore',
               loc: {
-                start: last.loc.start,
+                start: last.loc.end,
                 end: end.loc.end,
               },
               fix: fixer => fixer.insertTextBefore(end, '\n'),
@@ -78,7 +79,7 @@ export default {
               messageId: 'existedAfter',
               loc: {
                 start: start.loc.start,
-                end: first.loc.end,
+                end: first.loc.start,
               },
               fix: fixer => fixer.removeRange([start.range[1], first.range[0]]),
             })
@@ -88,7 +89,7 @@ export default {
             context.report({
               messageId: 'existedBefore',
               loc: {
-                start: last.loc.start,
+                start: last.loc.end,
                 end: end.loc.end,
               },
               fix: fixer => fixer.removeRange([last.range[1], end.range[0]]),
@@ -99,7 +100,7 @@ export default {
             context.report({
               messageId: 'missingBefore',
               loc: {
-                start: last.loc.start,
+                start: last.loc.end,
                 end: end.loc.end,
               },
               fix: fixer => fixer.insertTextBefore(end, '\n'),
@@ -110,7 +111,7 @@ export default {
             context.report({
               messageId: 'existedBefore',
               loc: {
-                start: last.loc.start,
+                start: last.loc.end,
                 end: end.loc.end,
               },
               fix: fixer => fixer.removeRange([last.range[1], end.range[0]]),

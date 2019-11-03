@@ -25,48 +25,126 @@ ruleTester.run('arrow-body-parens-linebreak', rule, {
   invalid: [
     {
       code: 'mayaka => (\nsatoshi)',
-      errors: [{ messageId: 'missingBefore' }],
+      errors: [
+        {
+          messageId: 'missingBefore',
+          line: 2,
+          column: 8,
+          endLine: 2,
+          endColumn: 9,
+        },
+      ],
       output: 'mayaka => (\nsatoshi\n)',
     },
     {
       code: 'mayaka => (satoshi\n)',
-      errors: [{ messageId: 'existedBefore' }],
+      errors: [
+        {
+          messageId: 'existedBefore',
+          line: 1,
+          column: 19,
+          endLine: 2,
+          endColumn: 2,
+        },
+      ],
       output: 'mayaka => (satoshi)',
     },
     {
       code: 'mayaka => (satoshi\n)',
       options: ['always'],
-      errors: [{ messageId: 'missingAfter' }],
+      errors: [
+        {
+          messageId: 'missingAfter',
+          line: 1,
+          column: 11,
+          endLine: 1,
+          endColumn: 12,
+        },
+      ],
       output: 'mayaka => (\nsatoshi\n)',
     },
     {
       code: 'mayaka => (\nsatoshi)',
       options: ['always'],
-      errors: [{ messageId: 'missingBefore' }],
+      errors: [
+        {
+          messageId: 'missingBefore',
+          line: 2,
+          column: 8,
+          endLine: 2,
+          endColumn: 9,
+        },
+      ],
       output: 'mayaka => (\nsatoshi\n)',
     },
     {
       code: 'mayaka => (satoshi)',
       options: ['always'],
-      errors: [{ messageId: 'missingAfter' }, { messageId: 'missingBefore' }],
+      errors: [
+        {
+          messageId: 'missingAfter',
+          line: 1,
+          column: 11,
+          endLine: 1,
+          endColumn: 12,
+        },
+        {
+          messageId: 'missingBefore',
+          line: 1,
+          column: 19,
+          endLine: 1,
+          endColumn: 20,
+        },
+      ],
       output: 'mayaka => (\nsatoshi\n)',
     },
     {
       code: 'mayaka => (\nsatoshi)',
       options: ['never'],
-      errors: [{ messageId: 'existedAfter' }],
+      errors: [
+        {
+          messageId: 'existedAfter',
+          line: 1,
+          column: 11,
+          endLine: 2,
+          endColumn: 1,
+        },
+      ],
       output: 'mayaka => (satoshi)',
     },
     {
       code: 'mayaka => (satoshi\n)',
       options: ['never'],
-      errors: [{ messageId: 'existedBefore' }],
+      errors: [
+        {
+          messageId: 'existedBefore',
+          line: 1,
+          column: 19,
+          endLine: 2,
+          endColumn: 2,
+        },
+      ],
       output: 'mayaka => (satoshi)',
     },
     {
       code: 'mayaka => (\nsatoshi\n)',
       options: ['never'],
-      errors: [{ messageId: 'existedAfter' }, { messageId: 'existedBefore' }],
+      errors: [
+        {
+          messageId: 'existedAfter',
+          line: 1,
+          column: 11,
+          endLine: 2,
+          endColumn: 1,
+        },
+        {
+          messageId: 'existedBefore',
+          line: 2,
+          column: 8,
+          endLine: 3,
+          endColumn: 2,
+        },
+      ],
       output: 'mayaka => (satoshi)',
     },
   ],
