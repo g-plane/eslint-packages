@@ -13,7 +13,7 @@
   "scripts": {
     "fmt": "prettier --write **/*.ts",
     "fmt:check": "prettier -c **/*.ts",
-    "test": "mocha",
+    "test": "mocha --reporter=dot",
     "build": "tsc -p tsconfig.build.json",
     "prepublishOnly": "yarn build"
   },
