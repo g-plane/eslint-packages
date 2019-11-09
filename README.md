@@ -28,6 +28,7 @@ You can add any rules as you want.
 ## 🚦 Rules
 
 - [arrow-body-parens-linebreak](docs/arrow-body-parens-linebreak.md) - Enforce style of linebreaks before/after parens of arrow functions bodies.
+- [destructuring-property-newline](docs/destructuring-property-newline.md) - Enforce placing destructuring properties on separate lines.
 
 ## 📃 License
 
