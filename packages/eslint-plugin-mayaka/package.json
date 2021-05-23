@@ -1,0 +1,25 @@
+{
+  "name": "eslint-plugin-mayaka",
+  "version": "0.2.0",
+  "description": "ESLint plugin with various rules.",
+  "main": "dist/index.js",
+  "repository": "https://github.com/g-plane/eslint-plugin-mayaka",
+  "author": "Pig Fang <g-plane@hotmail.com>",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p .",
+    "prepublishOnly": "yarn build"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.4",
+    "@types/eslint": "^6.1.3",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "eslint": "^6.6.0",
+    "mocha": "^6.2.2"
+  }
+}
