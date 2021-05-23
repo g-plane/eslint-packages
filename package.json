@@ -2,12 +2,13 @@
   "name": "eslint-packages",
   "private": true,
   "scripts": {
-    "fmt": "prettier --write {src,tests}/**/*.ts",
-    "fmt:check": "prettier -c {src,tests}/**/*.ts",
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --check .",
     "test": "mocha"
   },
   "devDependencies": {
     "@gplane/tsconfig": "^4.2.0",
+    "prettier": "^2.3.0",
     "typescript": "^4.2.4"
   }
 }
